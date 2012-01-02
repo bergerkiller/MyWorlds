@@ -19,6 +19,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.PlayerPortalEvent;
 
 public class MWPlayerListener extends PlayerListener {
 	
@@ -32,6 +33,11 @@ public class MWPlayerListener extends PlayerListener {
 			--maxwidth;
 			if (maxwidth <= 0) return false;
 		}
+	}
+	
+	public void onPlayerPortal(PlayerPortalEvent event) {
+		if(Portal.get(event.getFrom(), 5)!=null)
+			event.setCancelled(true);
 	}
 	
 	@Override

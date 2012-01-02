@@ -61,6 +61,7 @@ public class MyWorlds extends JavaPlugin {
         pm.registerEvent(Event.Type.PLAYER_JOIN, playerListener, Priority.Monitor, this);
         pm.registerEvent(Event.Type.PLAYER_QUIT, playerListener, Priority.Monitor, this);
         pm.registerEvent(Event.Type.PLAYER_CHANGED_WORLD, playerListener, Priority.Monitor, this);
+        pm.registerEvent(Event.Type.PLAYER_PORTAL, playerListener, Priority.High, this);
         pm.registerEvent(Event.Type.PLAYER_INTERACT, playerListener, Priority.Lowest, this);
         pm.registerEvent(Event.Type.SIGN_CHANGE, blockListener, Priority.Normal, this);  
         pm.registerEvent(Event.Type.WORLD_LOAD, worldListener, Priority.Monitor, this);  
